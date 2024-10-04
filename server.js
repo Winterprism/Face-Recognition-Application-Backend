@@ -12,10 +12,13 @@ import fetch from 'node-fetch';
 const db = knex({
     client: 'pg',
     connection: {
-      host: '127.0.0.1',
-      user: 'postgres',
-      password: 'postgres',
-      database: 'face-recognition-app',
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false },
+        host: process.env.DATABASE_HOSTNAME,
+        port: 5432,
+        user: process.env.DATABASE_USERNAME,
+        password: process.env.DATABASE_PASSWORD,
+        database: process.env.DATABASE_DB,
     }
 });
 
