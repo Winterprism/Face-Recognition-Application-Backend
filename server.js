@@ -24,7 +24,7 @@ const db = knex({
 
 
 const corsOptions = {
-    origin: ['*'],
+    origin: ['https://face-recognition-application-h7dk.onrender.com'],
     methods: '*', 
     allowedHeaders: "Content-Type, Authorization",
     credentials: true,
